@@ -20,6 +20,28 @@ function login(username, password) {
     return 200;
 }
 
+function parseGalleryList(response) {
+    const html = response.text();
+    const doc = parseHtml(html);
+    let items = doc.querySelectorAll('.itg.gltc tr:not(:first-child)');
+    if (items.length === 0) {
+        items = doc.querySelectorAll('.itg.gltm tr:not(:first-child)');
+    }
+    return items.map(it => ({
+        id: it.querySelector('.glname a').attr('href'),
+        title: it.querySelector('.glink').text(),
+        thumb: it.querySelector('.glthumb img').attr('data-src') || it.querySelector('.glthumb img').attr('src'),
+        extra: JSON.stringify({
+            link: it.querySelector('.glname a').attr('href'),
+        }),
+    }));
+}
+
+function search(keyword, page) {
+    const response = fetch(`${host}?page=${page}&f_search=${keyword}`);
+    return parseGalleryList(response);
+}
+
 function updateCookie(cookie) {
     const response = fetch('https://exhentai.org/mytags', {
         headers: {
@@ -43,20 +65,7 @@ function home(page) {
         uri += `?page=${page}`;
     }
     const response = fetch(uri);
-    const html = response.text();
-    const doc = parseHtml(html);
-    let items = doc.querySelectorAll('.itg.gltc tr:not(:first-child)');
-    if (items.length === 0) {
-        items = doc.querySelectorAll('.itg.gltm tr:not(:first-child)');
-    }
-    return items.map(it => ({
-        id: it.querySelector('.glname a').attr('href'),
-        title: it.querySelector('.glink').text(),
-        thumb: it.querySelector('.glthumb img').attr('data-src') || it.querySelector('.glthumb img').attr('src'),
-        extra: JSON.stringify({
-            link: it.querySelector('.glname a').attr('href'),
-        }),
-    }));
+    return parseGalleryList(response);
 }
 
 function detail(gallery) {
