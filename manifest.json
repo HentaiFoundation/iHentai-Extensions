@@ -1,14 +1,17 @@
 [
     {
         "name": "DM5",
-        "src": "dm5/manifest.json"
+        "src": "dm5",
+        "version": 1
     },
     {
         "name": "ExHentai",
-        "src": "exhentai/manifest.json"
+        "src": "exhentai",
+        "version": 1
     },
     {
-        "name": "manhuagui",
-        "src": "manhuagui/manifest.json"
+        "name": "Manhuagui",
+        "src": "manhuagui",
+        "version": 1
     }
 ]

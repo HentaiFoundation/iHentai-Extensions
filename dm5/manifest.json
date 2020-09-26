@@ -1,6 +1,7 @@
 {
     "name": "DM5",
     "entry": "index.js",
+    "version": 1,
     "hosts": [
         "m.dm5.com",
         ".*\\.cdndm5\\.com"

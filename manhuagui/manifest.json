@@ -1,6 +1,7 @@
 {
     "name": "Manhuagui",
     "entry": "index.js",
+    "version": 1,
     "hosts": [
         "m.manhuagui.com",
         "i.hamreus.com"

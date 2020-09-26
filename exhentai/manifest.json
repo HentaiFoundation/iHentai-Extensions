@@ -1,6 +1,7 @@
 {
-    "name": "exHentai",
+    "name": "ExHentai",
     "entry": "index.js",
+    "version": 1,
     "hosts": [
         "exhentai.org",
         "forums.e-hentai.org",
