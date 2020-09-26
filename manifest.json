@@ -1,0 +1,14 @@
+[
+    {
+        "name": "DM5",
+        "src": "dm5/manifest.json"
+    },
+    {
+        "name": "ExHentai",
+        "src": "exhentai/manifest.json"
+    },
+    {
+        "name": "manhuagui",
+        "src": "manhuagui/manifest.json"
+    }
+]
