@@ -2,16 +2,16 @@
     {
         "name": "DM5",
         "src": "dm5",
-        "version": 1
+        "version": 2
     },
     {
         "name": "ExHentai",
         "src": "exhentai",
-        "version": 1
+        "version": 2
     },
     {
         "name": "Manhuagui",
         "src": "manhuagui",
-        "version": 1
+        "version": 2
     }
 ]

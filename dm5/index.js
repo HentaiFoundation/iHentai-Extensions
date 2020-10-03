@@ -62,6 +62,7 @@ function detail(gallery) {
     const html = response.text();
     const doc = parseHtml(html);
     return {
+        id: url,
         title: doc.querySelector('.detail-main-info-title').text(),
         thumb: doc.querySelector('.detail-main-cover > img').attr('src'),
         desc: doc.querySelector('.detail-desc').text(),

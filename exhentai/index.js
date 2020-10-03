@@ -122,6 +122,7 @@ function detailFromLink(url) {
         }));
     }
     return {
+        id: url,
         title: doc.querySelector('#gn').text(),
         sub_title: doc.querySelector('#gj').text(),
         thumb: `${doc.querySelector('#gd1 > div').attr('style')}`.match(/url\(([^\s]*)\)/)[1],
